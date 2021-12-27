@@ -1,5 +1,5 @@
-import { Layout, Menu, Row, Col, Card, Tooltip, List } from "antd";
-import { UserOutlined, GithubOutlined, MailOutlined, WalletOutlined, YoutubeOutlined } from '@ant-design/icons';
+import { Layout, Menu, Row, Col, Card, Tooltip, List, Affix } from "antd";
+import { UserOutlined, GithubOutlined, MailOutlined, WalletOutlined, YoutubeOutlined, MonitorOutlined } from '@ant-design/icons';
 import Avatar from "antd/lib/avatar/avatar";
 import { NextPage } from "next";
 import Link from "next/link";
@@ -8,27 +8,30 @@ import { Typography, Divider } from 'antd';
 const { Header, Content, Footer } = Layout;
 const { Title, Paragraph, Text } = Typography;
 
+
 const About: NextPage = () => {
     const infoMenu = () => {
-        return (<Menu theme="dark" mode="horizontal" defaultSelectedKeys={["name"]}>
-            <Menu.Item key="name">
-                <Link href="#name">Aka Lu</Link>
-            </Menu.Item>
-            <Menu.Item key="skill">
-                <Link href="#skill">技能</Link>
-            </Menu.Item>
-            <Menu.Item key="experience">
-                <Link href="#experience">工作經歷</Link>
-            </Menu.Item>
-            <Menu.Item key="portfolio">
-                <Link href="#portfolio">作品集</Link>
-            </Menu.Item>
-        </Menu>)
+        return (
+            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["name"]} >
+                <Menu.Item key="name">
+                    <Link href="#name">Aka Lu</Link>
+                </Menu.Item>
+                <Menu.Item key="skill">
+                    <Link href="#skill">技能</Link>
+                </Menu.Item>
+                <Menu.Item key="experience">
+                    <Link href="#experience">工作經歷</Link>
+                </Menu.Item>
+                <Menu.Item key="portfolio">
+                    <Link href="#portfolio">作品集</Link>
+                </Menu.Item>
+            </Menu>
+        )
     }
 
     const nameBlock = () => {
-        return (<Layout style={{}}>
-            <Card style={{ marginTop: '5em' }}>
+        return (
+            <Card>
                 <Row align="middle">
                     <Col span={6} offset={3}>
                         <Avatar
@@ -99,17 +102,121 @@ const About: NextPage = () => {
                     </Col>
                 </Row>
             </Card>
-        </Layout>
         )
     }
 
+    const skillBlock = () => {
+        return (
+            <Row>
+                <Col span={18} offset={3}>
+                    <Card>
+                        <Typography>
+                            <Title style={{ color: "brown" }}><MonitorOutlined /> 技能</Title>
+                            <Row>
+                                <Card.Grid>
+                                    <Title level={2}>Front-End</Title>
+                                    <List>
+                                        <List.Item>
+                                            Angular
+                                        </List.Item>
+                                        <List.Item>
+                                            React
+                                        </List.Item>
+                                        <List.Item>
+                                            HTML / CSS / JavaScript (TypeScript)
+                                        </List.Item>
+                                        <List.Item>
+                                            jQuery
+                                        </List.Item>
+                                        <List.Item>
+                                            Bootstrap、Ant Design
+                                        </List.Item>
+                                    </List>
+                                </Card.Grid>
+                                <Card.Grid>
+                                    <Title level={2}>Back-End</Title>
+                                    <List>
+                                        <List.Item>
+                                            ASP.Net Core
+                                        </List.Item>
+                                        <List.Item>
+                                            ASP.Net Framework
+                                        </List.Item>
+                                        <List.Item>
+                                            Java
+                                        </List.Item>
+                                    </List>
+                                </Card.Grid>
+                                <Card.Grid>
+                                    <Title level={2}>Other Languages</Title>
+                                    <List>
+                                        <List.Item>
+                                            C、C++
+                                        </List.Item>
+                                        <List.Item>
+                                            Python
+                                        </List.Item>
+                                        <List.Item>
+                                            Android Studio (Java)
+                                        </List.Item>
+                                    </List>
+                                </Card.Grid>
+                            </Row>
+                            <Row>
+                                <Card.Grid>
+                                    <Title level={2}>Database</Title>
+                                    <List>
+                                        <List.Item>
+                                            Microsoft SQL Server
+                                        </List.Item>
+                                        <List.Item>
+                                            Firebase
+                                        </List.Item>
+                                        <List.Item>
+                                            MySQL
+                                        </List.Item>
+                                        <List.Item>
+                                            SQLite
+                                        </List.Item>
+
+                                    </List>
+                                </Card.Grid>
+                                <Card.Grid>
+                                    <Title level={2}>Version Control</Title>
+                                    <List>
+                                        <List.Item>
+                                            Git
+                                        </List.Item>
+                                        <List.Item>
+                                            Github
+                                        </List.Item>
+                                        <List.Item>
+                                            Gitlab
+                                        </List.Item>
+                                    </List>
+                                </Card.Grid>
+
+                            </Row>
+                        </Typography>
+                    </Card >
+                </Col>
+            </Row>
+        )
+    }
 
     return (<Layout id="name">
-        <Header>
-            {infoMenu()}
-        </Header>
+        <Affix>
+            <Header>
+                {infoMenu()}
+            </Header>
+        </Affix>
         <Content>
-            {nameBlock()}
+            <Layout id="name" style={{ marginTop: '5em' }}>
+                {nameBlock()}
+            </Layout>
+            <Layout id="skill" style={{ marginTop: '5em' }}>
+                {skillBlock()}
+            </Layout>
         </Content>
         <Footer>Footer</Footer>
     </Layout>)
