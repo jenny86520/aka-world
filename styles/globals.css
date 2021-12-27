@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.MyIcon{
+  font-size: 32px;
+}
