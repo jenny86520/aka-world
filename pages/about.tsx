@@ -273,13 +273,13 @@ const About: NextPage = () => {
             </Header>
         </Affix>
         <Content>
-            <Layout id="name" style={{ marginTop: '5em' }}>
+            <Layout id="name" style={{ paddingTop: '5em' }}>
                 {nameBlock()}
             </Layout>
-            <Layout id="skill" style={{ marginTop: '5em' }}>
+            <Layout id="skill" style={{ paddingTop: '5em' }}>
                 {skillBlock()}
             </Layout>
-            <Layout id="experience" style={{ marginTop: '5em' }}>
+            <Layout id="experience" style={{ paddingTop: '5em' }}>
                 {experienceBlock()}
             </Layout>
         </Content>
