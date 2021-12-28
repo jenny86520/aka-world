@@ -1,18 +1,39 @@
-import { Layout, Menu, Row, Col, Card, Tooltip, List, Affix, Collapse, Descriptions } from "antd";
+import { Layout, Menu, Row, Col, Card, Tooltip, List, Affix, Collapse, Descriptions, Carousel, Image, Tabs } from "antd";
 import { UserOutlined, GithubOutlined, MailOutlined, WalletOutlined, YoutubeOutlined, MonitorOutlined } from '@ant-design/icons';
 import Avatar from "antd/lib/avatar/avatar";
 import { NextPage } from "next";
 import Link from "next/link";
 import { Typography } from 'antd';
 import { backgroundColor, darkColor, mainColor, secondColor } from "../shared/colors";
+import PropTypes from "prop-types";
 
 const { Header, Content, Footer } = Layout;
 const { Title, Paragraph } = Typography;
 const { Panel } = Collapse;
+const { TabPane } = Tabs;
 
 const cardStyles = {
     borderRadius: "2rem",
     boxShadow: `2px 2px 2px 5px ${darkColor}`
+};
+
+
+const YoutubeEmbed = (embedId: string) => (
+    <div className="video-responsive">
+        <iframe
+            width="100%"
+            height="500"
+            src={`https://www.youtube.com/embed/${embedId}`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="Embedded youtube"
+        />
+    </div>
+);
+
+YoutubeEmbed.propTypes = {
+    embedId: PropTypes.string.isRequired
 };
 
 const About: NextPage = () => {
@@ -53,7 +74,8 @@ const About: NextPage = () => {
                         <Col md="24" lg="8">
                             <Avatar
                                 size={300}
-                                icon={<UserOutlined />} />
+                                icon={<UserOutlined />}
+                                src="/myPhoto.jpg" />
                         </Col>
                         <Col md="24" lg="10" offset={1} style={{ paddingTop: 20 }}>
                             <Row align="middle">
@@ -113,7 +135,7 @@ const About: NextPage = () => {
                                             <List.Item.Meta
                                                 avatar={<YoutubeOutlined className="MyIcon" style={{ color: "red" }} />}
                                                 title={"赤蜻."}
-                                                description={"https://www.youtube.com/channel/UC9mNWhvvEgAPA2Je1wi-HYQ"}>
+                                                description={"https://www.youtube.com/embed/UC9mNWhvvEgAPA2Je1wi-HYQ"}>
                                             </List.Item.Meta>
                                         </Tooltip>
                                     </List.Item>
@@ -192,7 +214,10 @@ const About: NextPage = () => {
                                             Microsoft SQL Server
                                         </List.Item>
                                         <List.Item>
-                                            Firebase
+                                            Firebase、MongoDB
+                                        </List.Item>
+                                        <List.Item>
+                                            Entity Framework
                                         </List.Item>
                                         <List.Item>
                                             MySQL
@@ -295,7 +320,93 @@ const About: NextPage = () => {
                     <Card style={cardStyles}>
                         <Typography>
                             <Title style={{ color: secondColor }}><MonitorOutlined /> 作品集</Title>
-                            Coming soon ...
+                            <Collapse accordion defaultActiveKey="1">
+                                <Panel header="銀行內外部系統的前後端（Angular、ASP.net core）" key="1">
+                                    <Tabs defaultActiveKey="1">
+                                        <TabPane tab="身分驗證" key={1}>
+                                            <Carousel autoplay>
+                                                <div>
+                                                    <Image src="/portfolio_client_1_1.png" alt="portfolio_client_1_1"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_client_1_2.png" alt="portfolio_client_1_2"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_client_1_3.png" alt="portfolio_client_1_3"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_client_1_4.png" alt="portfolio_client_1_4"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_client_1_5.png" alt="portfolio_client_1_5"></Image>
+                                                </div>
+                                            </Carousel>
+                                        </TabPane>
+                                        <TabPane tab="檔案上傳" key={2}>
+                                            <Carousel autoplay>
+                                                <div>
+                                                    <Image src="/portfolio_client_2_1.png" alt="portfolio_client_2_1"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_client_2_2.png" alt="portfolio_client_2_2"></Image>
+                                                </div>
+                                            </Carousel>
+                                        </TabPane>
+                                        <TabPane tab="表單填寫" key={3}>
+                                            <Carousel autoplay>
+                                                <div>
+                                                    <Image src="/portfolio_client_3_1.png" alt="portfolio_client_3_1"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_client_3_2.png" alt="portfolio_client_3_2"></Image>
+                                                </div>
+                                            </Carousel>
+                                        </TabPane>
+                                        <TabPane tab="表單呈現 & 列印" key={4}>
+                                            <Carousel autoplay>
+                                                <div>
+                                                    <Image src="/portfolio_client_4_1.png" alt="portfolio_client_4_1"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_client_4_2.png" alt="portfolio_client_4_2"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_client_4_3.png" alt="portfolio_client_4_3"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_client_4_4.png" alt="portfolio_client_4_4"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_client_4_5.png" alt="portfolio_client_4_5"></Image>
+                                                </div>
+                                            </Carousel>
+                                        </TabPane>
+                                        <TabPane disabled tab="內部系統不宜呈現" key={5}></TabPane>
+                                    </Tabs>
+
+                                </Panel>
+                                <Panel header="書寶寶好棒 Bookie（Android App）" key="2">
+                                    <Tabs defaultActiveKey="1">
+                                        <TabPane tab="介紹影片" key={1}>
+                                            {YoutubeEmbed("P4qIcgL_r2c")}
+                                        </TabPane>
+                                        <TabPane tab="畫面呈現" key={2}>
+                                            <Carousel autoplay>
+                                                <div>
+                                                    <Image src="/portfolio_app_1_1.png" alt="portfolio_app_1_1"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_app_1_2.png" alt="portfolio_app_1_2"></Image>
+                                                </div>
+                                                <div>
+                                                    <Image src="/portfolio_app_1_3.png" alt="portfolio_app_1_3"></Image>
+                                                </div>
+                                            </Carousel>
+                                        </TabPane>
+                                    </Tabs>
+                                </Panel>
+                            </Collapse>
+
                         </Typography>
                     </Card>
                 </Col>
@@ -304,29 +415,29 @@ const About: NextPage = () => {
     }
 
     return (
-    <Layout style={{ backgroundColor: backgroundColor }}>
-        <Affix style={{ marginBottom: "-3rem", zIndex: 1 }}>
-            <Header style={{ backgroundColor: darkColor }}>
-                <div className="logo" />
-                {infoMenu()}
-            </Header>
-        </Affix>
-        <Content style={{ paddingBottom: "3rem" }} >
-            <Layout id="name" style={{ paddingTop: "3rem" }}>
-                {nameBlock()}
-            </Layout>
-            <Layout id="skill" style={{ paddingTop: "3rem", backgroundColor: backgroundColor}}>
-                {skillBlock()}
-            </Layout>
-            <Layout id="experience" style={{ paddingTop: "3rem", backgroundColor: backgroundColor }}>
-                {experienceBlock()}
-            </Layout>
-            <Layout id="portfolio" style={{ paddingTop: "3rem", backgroundColor: backgroundColor }}>
-                {portfolio()}
-            </Layout>
-        </Content>
-        {/* <Footer>Footer</Footer> */}
-    </Layout>)
+        <Layout style={{ backgroundColor: backgroundColor }}>
+            <Affix style={{ marginBottom: "-3rem", zIndex: 1 }}>
+                <Header style={{ backgroundColor: darkColor }}>
+                    <div className="logo" />
+                    {infoMenu()}
+                </Header>
+            </Affix>
+            <Content style={{ paddingBottom: "3rem" }} >
+                <Layout id="name" style={{ paddingTop: "3rem" }}>
+                    {nameBlock()}
+                </Layout>
+                <Layout id="skill" style={{ paddingTop: "3rem", backgroundColor: backgroundColor }}>
+                    {skillBlock()}
+                </Layout>
+                <Layout id="experience" style={{ paddingTop: "3rem", backgroundColor: backgroundColor }}>
+                    {experienceBlock()}
+                </Layout>
+                <Layout id="portfolio" style={{ paddingTop: "3rem", backgroundColor: backgroundColor }}>
+                    {portfolio()}
+                </Layout>
+            </Content>
+            {/* <Footer>Footer</Footer> */}
+        </Layout>)
 }
 
 export default About;
