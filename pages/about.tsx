@@ -4,11 +4,16 @@ import Avatar from "antd/lib/avatar/avatar";
 import { NextPage } from "next";
 import Link from "next/link";
 import { Typography } from 'antd';
+import { backgroundColor, darkColor, mainColor, secondColor } from "./shared/colors";
 
 const { Header, Content, Footer } = Layout;
 const { Title, Paragraph } = Typography;
 const { Panel } = Collapse;
 
+const cardStyles = {
+    borderRadius: "2rem",
+    boxShadow: `2px 2px 2px 5px ${darkColor}`
+};
 
 const About: NextPage = () => {
     let menuSelectKeys: string[] = [];
@@ -22,7 +27,8 @@ const About: NextPage = () => {
                 }}
                 mode="horizontal"
                 defaultSelectedKeys={["name"]}
-                selectedKeys={menuSelectKeys}>
+                selectedKeys={menuSelectKeys}
+                style={{ backgroundColor: darkColor }}>
                 <Menu.Item key="name" id="nameBtn">
                     <Link href="#name">Aka Lu</Link>
                 </Menu.Item>
@@ -41,21 +47,21 @@ const About: NextPage = () => {
 
     const nameBlock = () => {
         return (
-            <Card>
-                <Row align="middle" justify="center">
-                    <Col md="24" lg="8">
-                        <Avatar
-                            size={300}
-                            icon={<UserOutlined />} />
-                    </Col>
-                    <Col md="24" lg="10" offset={1} style={{paddingTop: 20}}>
-                        <Typography>
+            <Card >
+                <Typography>
+                    <Row align="middle" justify="center">
+                        <Col md="24" lg="8">
+                            <Avatar
+                                size={300}
+                                icon={<UserOutlined />} />
+                        </Col>
+                        <Col md="24" lg="10" offset={1} style={{ paddingTop: 20 }}>
                             <Row align="middle">
                                 <Col md="12" lg="5" >
-                                    <Title>呂芯萍</Title>
+                                    <Title style={{ color: mainColor }}> 呂芯萍</Title>
                                 </Col>
                                 <Col md="12" lg="5" offset={1}>
-                                    <Title level={2}>Aka Lu</Title>
+                                    <Title level={2} style={{ color: mainColor }}>Aka Lu</Title>
                                 </Col>
                             </Row>
                             <Row>
@@ -114,12 +120,10 @@ const About: NextPage = () => {
                                 </a>
                             </List>
 
-                        </Typography>
-
-
-                    </Col>
-                </Row>
-            </Card>
+                        </Col>
+                    </Row>
+                </Typography >
+            </Card >
         )
     }
 
@@ -127,13 +131,13 @@ const About: NextPage = () => {
         return (
             <Row justify="center">
                 <Col span={22} lg={18}>
-                    <Card>
-                        <Typography>
-                            <Title style={{ color: "brown" }}><MonitorOutlined /> 技能</Title>
+                    <Card style={cardStyles}>
+                        <Typography >
+                            <Title style={{ color: secondColor }}><MonitorOutlined /> 技能</Title>
                             <Row>
                                 <Card.Grid className="ant-col-24 ant-col-lg-8">
                                     <Title level={2}>Front-End</Title>
-                                    <List>
+                                    <List style={{ fontSize: 20 }}>
                                         <List.Item>
                                             Angular
                                         </List.Item>
@@ -153,7 +157,7 @@ const About: NextPage = () => {
                                 </Card.Grid>
                                 <Card.Grid className="ant-col-24 ant-col-lg-8">
                                     <Title level={2}>Back-End</Title>
-                                    <List>
+                                    <List style={{ fontSize: 20 }}>
                                         <List.Item>
                                             ASP.Net Core
                                         </List.Item>
@@ -167,7 +171,7 @@ const About: NextPage = () => {
                                 </Card.Grid>
                                 <Card.Grid className="ant-col-24 ant-col-lg-8">
                                     <Title level={2}>Other Languages</Title>
-                                    <List>
+                                    <List style={{ fontSize: 20 }}>
                                         <List.Item>
                                             C、C++
                                         </List.Item>
@@ -183,7 +187,7 @@ const About: NextPage = () => {
                             <Row>
                                 <Card.Grid className="ant-col-24 ant-col-lg-8">
                                     <Title level={2}>Database</Title>
-                                    <List>
+                                    <List style={{ fontSize: 20 }}>
                                         <List.Item>
                                             Microsoft SQL Server
                                         </List.Item>
@@ -201,7 +205,7 @@ const About: NextPage = () => {
                                 </Card.Grid>
                                 <Card.Grid className="ant-col-24 ant-col-lg-8">
                                     <Title level={2}>Version Control</Title>
-                                    <List>
+                                    <List style={{ fontSize: 20 }}>
                                         <List.Item>
                                             Git
                                         </List.Item>
@@ -226,13 +230,13 @@ const About: NextPage = () => {
         return (
             <Row justify="center">
                 <Col span={22} lg={18}>
-                    <Card>
+                    <Card style={cardStyles}>
                         <Typography>
-                            <Title style={{ color: "brown" }}><MonitorOutlined /> 工作經歷</Title>
+                            <Title style={{ color: secondColor }}><MonitorOutlined /> 工作經歷</Title>
                             <Title level={2}>銀行內外部系統的前後端（Angular、ASP.net core）</Title>
                             <Collapse defaultActiveKey={['1', '2']}>
                                 <Panel header="工作資訊" key="1">
-                                    <List>
+                                    <List >
                                         <List.Item>
                                             <Descriptions>
                                                 <Descriptions.Item label="公司名稱">金財通商務科技服務股份有限公司</Descriptions.Item>
@@ -288,9 +292,9 @@ const About: NextPage = () => {
         return (
             <Row justify="center">
                 <Col span={22} lg={18}>
-                    <Card>
+                    <Card style={cardStyles}>
                         <Typography>
-                            <Title style={{ color: "brown" }}><MonitorOutlined /> 作品集</Title>
+                            <Title style={{ color: secondColor }}><MonitorOutlined /> 作品集</Title>
                             Coming soon ...
                         </Typography>
                     </Card>
@@ -299,28 +303,29 @@ const About: NextPage = () => {
         )
     }
 
-    return (<Layout>
-        <Affix>
-            <Header>
+    return (
+    <Layout style={{ backgroundColor: backgroundColor }}>
+        <Affix style={{ marginBottom: "-3rem", zIndex: 1 }}>
+            <Header style={{ backgroundColor: darkColor }}>
                 <div className="logo" />
                 {infoMenu()}
             </Header>
         </Affix>
-        <Content>
-            <Layout id="name" style={{ paddingTop: 20 }}>
+        <Content style={{ paddingBottom: "3rem" }} >
+            <Layout id="name" style={{ paddingTop: "3rem" }}>
                 {nameBlock()}
             </Layout>
-            <Layout id="skill" style={{ paddingTop: 20 }}>
+            <Layout id="skill" style={{ paddingTop: "3rem", backgroundColor: backgroundColor}}>
                 {skillBlock()}
             </Layout>
-            <Layout id="experience" style={{ paddingTop: 20 }}>
+            <Layout id="experience" style={{ paddingTop: "3rem", backgroundColor: backgroundColor }}>
                 {experienceBlock()}
             </Layout>
-            <Layout id="portfolio" style={{ paddingTop: 20 }}>
+            <Layout id="portfolio" style={{ paddingTop: "3rem", backgroundColor: backgroundColor }}>
                 {portfolio()}
             </Layout>
         </Content>
-        <Footer>Footer</Footer>
+        {/* <Footer>Footer</Footer> */}
     </Layout>)
 }
 
