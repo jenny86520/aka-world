@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Aka World</title>
         <meta name="description" content="Aka's introduction website" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/myIcon.png" />
       </Head>
 
       <main>
