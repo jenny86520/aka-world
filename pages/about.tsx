@@ -4,7 +4,7 @@ import Avatar from "antd/lib/avatar/avatar";
 import { NextPage } from "next";
 import Link from "next/link";
 import { Typography } from 'antd';
-import { backgroundColor, darkColor, mainColor, secondColor } from "./shared/colors";
+import { backgroundColor, darkColor, mainColor, secondColor } from "../shared/colors";
 
 const { Header, Content, Footer } = Layout;
 const { Title, Paragraph } = Typography;
