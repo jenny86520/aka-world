@@ -43,12 +43,12 @@ const About: NextPage = () => {
         return (
             <Card>
                 <Row align="middle" justify="center">
-                    <Col md="24" lg="8" style={{paddingRight: 50}}>
+                    <Col md="24" lg="8">
                         <Avatar
                             size={300}
                             icon={<UserOutlined />} />
                     </Col>
-                    <Col md="24" lg="10" style={{paddingTop: 20}}>
+                    <Col md="24" lg="10" offset={1} style={{paddingTop: 20}}>
                         <Typography>
                             <Row align="middle">
                                 <Col md="12" lg="5" >
@@ -125,8 +125,8 @@ const About: NextPage = () => {
 
     const skillBlock = () => {
         return (
-            <Row>
-                <Col span={18} offset={3}>
+            <Row justify="center">
+                <Col span={22} lg={18}>
                     <Card>
                         <Typography>
                             <Title style={{ color: "brown" }}><MonitorOutlined /> 技能</Title>
@@ -224,8 +224,8 @@ const About: NextPage = () => {
 
     const experienceBlock = () => {
         return (
-            <Row>
-                <Col span={18} offset={3}>
+            <Row justify="center">
+                <Col span={22} lg={18}>
                     <Card>
                         <Typography>
                             <Title style={{ color: "brown" }}><MonitorOutlined /> 工作經歷</Title>
@@ -286,8 +286,8 @@ const About: NextPage = () => {
 
     const portfolio = () => {
         return (
-            <Row>
-                <Col span={18} offset={3}>
+            <Row justify="center">
+                <Col span={22} lg={18}>
                     <Card>
                         <Typography>
                             <Title style={{ color: "brown" }}><MonitorOutlined /> 作品集</Title>
@@ -307,16 +307,16 @@ const About: NextPage = () => {
             </Header>
         </Affix>
         <Content>
-            <Layout id="name" style={{ paddingTop: '5em' }}>
+            <Layout id="name" style={{ paddingTop: 20 }}>
                 {nameBlock()}
             </Layout>
-            <Layout id="skill" style={{ paddingTop: '5em' }}>
+            <Layout id="skill" style={{ paddingTop: 20 }}>
                 {skillBlock()}
             </Layout>
-            <Layout id="experience" style={{ paddingTop: '5em' }}>
+            <Layout id="experience" style={{ paddingTop: 20 }}>
                 {experienceBlock()}
             </Layout>
-            <Layout id="portfolio" style={{ paddingTop: '5em' }}>
+            <Layout id="portfolio" style={{ paddingTop: 20 }}>
                 {portfolio()}
             </Layout>
         </Content>
