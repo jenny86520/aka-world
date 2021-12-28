@@ -9,20 +9,30 @@ const { Header, Content, Footer } = Layout;
 const { Title, Paragraph } = Typography;
 const { Panel } = Collapse;
 
+
 const About: NextPage = () => {
+    let menuSelectKeys: string[] = [];
+
     const infoMenu = () => {
         return (
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["name"]} >
-                <Menu.Item key="name">
+            <Menu
+                theme="dark"
+                onClick={() => {
+                    menuSelectKeys = [];
+                }}
+                mode="horizontal"
+                defaultSelectedKeys={["name"]}
+                selectedKeys={menuSelectKeys}>
+                <Menu.Item key="name" id="nameBtn">
                     <Link href="#name">Aka Lu</Link>
                 </Menu.Item>
-                <Menu.Item key="skill">
+                <Menu.Item key="skill" id="skillBtn">
                     <Link href="#skill">技能</Link>
                 </Menu.Item>
-                <Menu.Item key="experience">
+                <Menu.Item key="experience" id="experienceBtn">
                     <Link href="#experience">工作經歷</Link>
                 </Menu.Item>
-                <Menu.Item key="portfolio">
+                <Menu.Item key="portfolio" id="portfolioBtn">
                     <Link href="#portfolio">作品集</Link>
                 </Menu.Item>
             </Menu>
@@ -32,19 +42,19 @@ const About: NextPage = () => {
     const nameBlock = () => {
         return (
             <Card>
-                <Row align="middle">
-                    <Col span={6} offset={3}>
+                <Row align="middle" justify="center">
+                    <Col md="24" lg="8" style={{paddingRight: 50}}>
                         <Avatar
-                            size={{ xs: 120, sm: 120, md: 180, lg: 200, xl: 250, xxl: 300 }}
+                            size={300}
                             icon={<UserOutlined />} />
                     </Col>
-                    <Col span={12}>
+                    <Col md="24" lg="10" style={{paddingTop: 20}}>
                         <Typography>
                             <Row align="middle">
-                                <Col span={5}>
+                                <Col md="12" lg="5" >
                                     <Title>呂芯萍</Title>
                                 </Col>
-                                <Col span={5}>
+                                <Col md="12" lg="5" offset={1}>
                                     <Title level={2}>Aka Lu</Title>
                                 </Col>
                             </Row>
@@ -58,42 +68,50 @@ const About: NextPage = () => {
                             </Row>
 
                             <List>
-                                <List.Item>
-                                    <Tooltip title="E-mail 聯絡我" placement="topLeft">
-                                        <List.Item.Meta
-                                            avatar={<MailOutlined className="MyIcon" style={{ color: "blue" }} />}
-                                            title={"E-mail"}
-                                            description={<a href="mailto:jenny50626000@gmail.com" target="_block">jenny50626000@gmail.com</a>}>
-                                        </List.Item.Meta>
-                                    </Tooltip>
-                                </List.Item>
-                                <List.Item>
-                                    <Tooltip title="Github 瀏覽我的作品" placement="topLeft">
-                                        <List.Item.Meta
-                                            avatar={<GithubOutlined className="MyIcon" />}
-                                            title={"Github"}
-                                            description={<a href="https://github.com/jenny86520" target="_block">https://github.com/jenny86520</a>}>
-                                        </List.Item.Meta>
-                                    </Tooltip>
-                                </List.Item>
-                                <List.Item>
-                                    <Tooltip title="Angular 個人教學網頁" placement="topLeft">
-                                        <List.Item.Meta
-                                            avatar={<WalletOutlined className="MyIcon" style={{ color: "#DE3163" }} />}
-                                            title={"akaSchool"}
-                                            description={<a href="https://akaschool-f4936.web.app/" target="_block">https://akaschool-f4936.web.app/</a>}>
-                                        </List.Item.Meta>
-                                    </Tooltip>
-                                </List.Item>
-                                <List.Item>
-                                    <Tooltip title="Youtube 訂閱我的遊戲實況頻道" placement="topLeft">
-                                        <List.Item.Meta
-                                            avatar={<YoutubeOutlined className="MyIcon" style={{ color: "red" }} />}
-                                            title={"赤蜻."}
-                                            description={<a href="https://www.youtube.com/channel/UC9mNWhvvEgAPA2Je1wi-HYQ" target="_block">https://www.youtube.com/channel/UC9mNWhvvEgAPA2Je1wi-HYQ</a>}>
-                                        </List.Item.Meta>
-                                    </Tooltip>
-                                </List.Item>
+                                <a href="mailto:jenny50626000@gmail.com" target="_block">
+                                    <List.Item>
+                                        <Tooltip title="E-mail 聯絡我" placement="topLeft">
+                                            <List.Item.Meta
+                                                avatar={<MailOutlined className="MyIcon" style={{ color: "blue" }} />}
+                                                title={"E-mail"}
+                                                description={"jenny50626000@gmail.com"}>
+                                            </List.Item.Meta>
+                                        </Tooltip>
+                                    </List.Item>
+                                </a>
+                                <a href="https://github.com/jenny86520" target="_block">
+                                    <List.Item>
+                                        <Tooltip title="Github 瀏覽我的作品" placement="topLeft">
+                                            <List.Item.Meta
+                                                avatar={<GithubOutlined className="MyIcon" />}
+                                                title={"Github"}
+                                                description={"https://github.com/jenny86520"}>
+                                            </List.Item.Meta>
+                                        </Tooltip>
+                                    </List.Item>
+                                </a>
+                                <a href="https://akaschool-f4936.web.app/" target="_block">
+                                    <List.Item>
+                                        <Tooltip title="Angular 個人教學網頁" placement="topLeft">
+                                            <List.Item.Meta
+                                                avatar={<WalletOutlined className="MyIcon" style={{ color: "#DE3163" }} />}
+                                                title={"akaSchool"}
+                                                description={"https://akaschool-f4936.web.app/"}>
+                                            </List.Item.Meta>
+                                        </Tooltip>
+                                    </List.Item>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UC9mNWhvvEgAPA2Je1wi-HYQ" target="_block">
+                                    <List.Item>
+                                        <Tooltip title="Youtube 訂閱我的遊戲實況頻道" placement="topLeft">
+                                            <List.Item.Meta
+                                                avatar={<YoutubeOutlined className="MyIcon" style={{ color: "red" }} />}
+                                                title={"赤蜻."}
+                                                description={"https://www.youtube.com/channel/UC9mNWhvvEgAPA2Je1wi-HYQ"}>
+                                            </List.Item.Meta>
+                                        </Tooltip>
+                                    </List.Item>
+                                </a>
                             </List>
 
                         </Typography>
@@ -113,7 +131,7 @@ const About: NextPage = () => {
                         <Typography>
                             <Title style={{ color: "brown" }}><MonitorOutlined /> 技能</Title>
                             <Row>
-                                <Card.Grid>
+                                <Card.Grid className="ant-col-24 ant-col-lg-8">
                                     <Title level={2}>Front-End</Title>
                                     <List>
                                         <List.Item>
@@ -133,7 +151,7 @@ const About: NextPage = () => {
                                         </List.Item>
                                     </List>
                                 </Card.Grid>
-                                <Card.Grid>
+                                <Card.Grid className="ant-col-24 ant-col-lg-8">
                                     <Title level={2}>Back-End</Title>
                                     <List>
                                         <List.Item>
@@ -147,7 +165,7 @@ const About: NextPage = () => {
                                         </List.Item>
                                     </List>
                                 </Card.Grid>
-                                <Card.Grid>
+                                <Card.Grid className="ant-col-24 ant-col-lg-8">
                                     <Title level={2}>Other Languages</Title>
                                     <List>
                                         <List.Item>
@@ -163,7 +181,7 @@ const About: NextPage = () => {
                                 </Card.Grid>
                             </Row>
                             <Row>
-                                <Card.Grid>
+                                <Card.Grid className="ant-col-24 ant-col-lg-8">
                                     <Title level={2}>Database</Title>
                                     <List>
                                         <List.Item>
@@ -181,7 +199,7 @@ const About: NextPage = () => {
 
                                     </List>
                                 </Card.Grid>
-                                <Card.Grid>
+                                <Card.Grid className="ant-col-24 ant-col-lg-8">
                                     <Title level={2}>Version Control</Title>
                                     <List>
                                         <List.Item>
@@ -212,7 +230,7 @@ const About: NextPage = () => {
                         <Typography>
                             <Title style={{ color: "brown" }}><MonitorOutlined /> 工作經歷</Title>
                             <Title level={2}>銀行內外部系統的前後端（Angular、ASP.net core）</Title>
-                            <Collapse defaultActiveKey={['1']}>
+                            <Collapse defaultActiveKey={['1', '2']}>
                                 <Panel header="工作資訊" key="1">
                                     <List>
                                         <List.Item>
@@ -266,9 +284,25 @@ const About: NextPage = () => {
         )
     }
 
-    return (<Layout id="name">
+    const portfolio = () => {
+        return (
+            <Row>
+                <Col span={18} offset={3}>
+                    <Card>
+                        <Typography>
+                            <Title style={{ color: "brown" }}><MonitorOutlined /> 作品集</Title>
+                            Coming soon ...
+                        </Typography>
+                    </Card>
+                </Col>
+            </Row>
+        )
+    }
+
+    return (<Layout>
         <Affix>
             <Header>
+                <div className="logo" />
                 {infoMenu()}
             </Header>
         </Affix>
@@ -281,6 +315,9 @@ const About: NextPage = () => {
             </Layout>
             <Layout id="experience" style={{ paddingTop: '5em' }}>
                 {experienceBlock()}
+            </Layout>
+            <Layout id="portfolio" style={{ paddingTop: '5em' }}>
+                {portfolio()}
             </Layout>
         </Content>
         <Footer>Footer</Footer>
