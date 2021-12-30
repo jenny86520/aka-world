@@ -1,9 +1,16 @@
 import '../styles/globals.css'
 import "antd/dist/antd.css";
 import styles from '../styles/Home.module.css';
-import type { AppProps } from 'next/app'
+import type { AppProps, NextWebVitalsMetric } from 'next/app'
 import Head from 'next/head';
 import { Image, BackTop  } from 'antd';
+
+// log Measuring performance
+// export function reportWebVitals(metric: NextWebVitalsMetric) {
+//   if (metric.label === 'web-vital') {
+//     console.log(metric) // The metric object ({ id, name, startTime, value, label }) is logged to the console
+//   }
+// }
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -34,18 +41,5 @@ function MyApp({ Component, pageProps }: AppProps) {
     </div>
   )
 }
-
-// solve: warning: Throttling navigation to prevent the browser from hanging. See <URL>. Command line switch --disable-ipc-flooding-protection can be used to bypass the protection
-// function usePush(): NextRouter['push'] {
-//   const router = useRouter();
-//   const routerRef = useRef(router);
-
-//   routerRef.current = router;
-
-//   const [{ push }] = useState<Pick<NextRouter, 'push'>>({
-//     push: path => routerRef.current.push(path),
-//   });
-//   return push;
-// }
 
 export default MyApp
