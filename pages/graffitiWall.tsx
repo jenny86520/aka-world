@@ -3,7 +3,7 @@ import { WarningOutlined } from "@ant-design/icons";
 import { Content } from "antd/lib/layout/layout";
 import { NextPage } from "next";
 import { backgroundColor, mainColor } from "../shared/colors";
-import { menu } from "./components/menu/mainMenu";
+import { menu } from "../components/menu/mainMenu";
 import Marquee from "react-fast-marquee";
 
 const { Title } = Typography;

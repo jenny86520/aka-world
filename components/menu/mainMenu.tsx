@@ -1,7 +1,7 @@
 import { Affix, Menu } from "antd";
 import { FormatPainterOutlined } from "@ant-design/icons";
 import Link from "next/link";
-import { darkColor } from "../../../shared/colors";
+import { darkColor } from "../../shared/colors";
 import { Header } from "antd/lib/layout/layout";
 
 export const menu = () => {

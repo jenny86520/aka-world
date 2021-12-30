@@ -29,7 +29,7 @@ import {
   secondColor,
 } from "../shared/colors";
 import PropTypes from "prop-types";
-import { menu } from "./components/menu/mainMenu";
+import { menu } from "../components/menu/mainMenu";
 
 const { Content } = Layout;
 const { Title, Paragraph } = Typography;
