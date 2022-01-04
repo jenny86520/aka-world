@@ -19,7 +19,7 @@ const Home: NextPage = () => {
                   <CaretRightOutlined />
                 </Col>
                 <Col span={20}>
-                  <Link href="/about">Aka World!</Link>
+                  <Link href="/home">Aka World!</Link>
                 </Col>
                 <Col span={2}>
                   <CaretLeftOutlined />
