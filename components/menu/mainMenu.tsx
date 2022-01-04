@@ -1,7 +1,6 @@
 import { Affix, Menu } from "antd";
 import { FormatPainterOutlined } from "@ant-design/icons";
 import Link from "next/link";
-import { darkColor } from "../../shared/colors";
 import { Header } from "antd/lib/layout/layout";
 
 export const menu = () => {
@@ -9,7 +8,7 @@ export const menu = () => {
 
   return (
     <Affix style={{ marginBottom: "-3rem", zIndex: 1 }}>
-      <Header style={{ backgroundColor: darkColor }}>
+      <Header className="header">
         <div className="logo" />
         <Menu
           theme="dark"
@@ -19,7 +18,7 @@ export const menu = () => {
           mode="horizontal"
           defaultSelectedKeys={["name"]}
           selectedKeys={menuSelectKeys}
-          style={{ backgroundColor: darkColor }}
+          className="menu"
         >
           <Menu.Item key="name" id="nameBtn">
             <Link href="/about#name">Aka Lu</Link>

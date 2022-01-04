@@ -22,12 +22,6 @@ import {
 } from "@ant-design/icons";
 import Avatar from "antd/lib/avatar/avatar";
 import { NextPage } from "next";
-import {
-  backgroundColor,
-  darkColor,
-  mainColor,
-  secondColor,
-} from "../shared/colors";
 import PropTypes from "prop-types";
 import { menu } from "../components/menu/mainMenu";
 
@@ -35,11 +29,6 @@ const { Content } = Layout;
 const { Title, Paragraph } = Typography;
 const { Panel } = Collapse;
 const { TabPane } = Tabs;
-
-const cardStyles = {
-  borderRadius: "2rem",
-  boxShadow: `2px 2px 2px 5px ${darkColor}`,
-};
 
 const YoutubeEmbed = (embedId: string) => (
   <div className="video-responsive">
@@ -73,19 +62,16 @@ const About: NextPage = () => {
             <Col md="24" lg="10" offset={1} style={{ paddingTop: 20 }}>
               <Row align="middle">
                 <Col md="12" lg="5">
-                  <Title className="myTitle" style={{ color: mainColor }}>
-                    {" "}
-                    呂芯萍
-                  </Title>
+                  <Title className="myTitle"> 呂芯萍</Title>
                 </Col>
                 <Col md="12" lg="5" offset={1}>
-                  <Title level={2} style={{ color: mainColor }}>
+                  <Title level={2} className="myTitle">
                     Aka Lu
                   </Title>
                 </Col>
               </Row>
               <Row>
-                <Paragraph style={{ fontSize: 20 }}>
+                <Paragraph>
                   遊走於網頁前後端的軟體工程師。
                   <br />
                   前端著手過 Angular 及 React 專案，後端則為 ASP.Net Core 及
@@ -103,7 +89,7 @@ const About: NextPage = () => {
                       <List.Item.Meta
                         avatar={
                           <MailOutlined
-                            className="MyIcon"
+                            className="iconSize"
                             style={{ color: "blue" }}
                           />
                         }
@@ -117,7 +103,7 @@ const About: NextPage = () => {
                   <List.Item>
                     <Tooltip title="Github 瀏覽我的作品" placement="topLeft">
                       <List.Item.Meta
-                        avatar={<GithubOutlined className="MyIcon" />}
+                        avatar={<GithubOutlined className="iconSize" />}
                         title={"Github"}
                         description={"https://github.com/jenny86520"}
                       ></List.Item.Meta>
@@ -130,7 +116,7 @@ const About: NextPage = () => {
                       <List.Item.Meta
                         avatar={
                           <WalletOutlined
-                            className="MyIcon"
+                            className="iconSize"
                             style={{ color: "#DE3163" }}
                           />
                         }
@@ -152,7 +138,7 @@ const About: NextPage = () => {
                       <List.Item.Meta
                         avatar={
                           <YoutubeOutlined
-                            className="MyIcon"
+                            className="iconSize"
                             style={{ color: "red" }}
                           />
                         }
@@ -176,9 +162,9 @@ const About: NextPage = () => {
     return (
       <Row justify="center">
         <Col span={22} lg={18}>
-          <Card style={cardStyles}>
+          <Card className="cardStyles">
             <Typography>
-              <Title style={{ color: secondColor }}>
+              <Title className="title">
                 <MonitorOutlined /> 技能
               </Title>
               <Row>
@@ -240,9 +226,9 @@ const About: NextPage = () => {
     return (
       <Row justify="center">
         <Col span={22} lg={18}>
-          <Card style={cardStyles}>
+          <Card className="cardStyles">
             <Typography>
-              <Title style={{ color: secondColor }}>
+              <Title className="title">
                 <MonitorOutlined /> 工作經歷
               </Title>
               <Title level={2}>
@@ -315,9 +301,9 @@ const About: NextPage = () => {
     return (
       <Row justify="center">
         <Col span={22} lg={18}>
-          <Card style={cardStyles}>
+          <Card className="cardStyles">
             <Typography>
-              <Title style={{ color: secondColor }}>
+              <Title className="title">
                 <MonitorOutlined /> 作品集
               </Title>
               <Collapse accordion defaultActiveKey="1">
@@ -467,32 +453,22 @@ const About: NextPage = () => {
   };
 
   return (
-    <Layout style={{ backgroundColor: backgroundColor }}>
+    <Layout className="pageLayout">
       {infoMenu()}
-      <Content style={{ paddingBottom: "3rem" }}>
-        <Layout id="name" style={{ paddingTop: "3rem" }}>
+      <Content className="pageContent">
+        <Layout id="name" className="pageLayout subLayout">
           {nameBlock()}
         </Layout>
-        <Layout
-          id="skill"
-          style={{ paddingTop: "3rem", backgroundColor: backgroundColor }}
-        >
+        <Layout id="skill" className="pageLayout subLayout">
           {skillBlock()}
         </Layout>
-        <Layout
-          id="experience"
-          style={{ paddingTop: "3rem", backgroundColor: backgroundColor }}
-        >
+        <Layout id="experience" className="pageLayout subLayout">
           {experienceBlock()}
         </Layout>
-        <Layout
-          id="portfolio"
-          style={{ paddingTop: "3rem", backgroundColor: backgroundColor }}
-        >
+        <Layout id="portfolio" className="pageLayout subLayout">
           {portfolio()}
         </Layout>
       </Content>
-      {/* <Footer>Footer</Footer> */}
     </Layout>
   );
 };
