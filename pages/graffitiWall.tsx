@@ -16,17 +16,25 @@ import { NextPage } from "next";
 import { menu } from "../components/menu/mainMenu";
 import Marquee from "react-fast-marquee";
 import style from "../styles/graffitiWall.module.css";
+import ReCAPTCHA from "react-google-recaptcha";
+import getConfig from "next/config";
 
 const { Title } = Typography;
 
 const GraffitiWall: NextPage = () => {
   const mainMenu = menu;
+  const { publicRuntimeConfig } = getConfig();
 
   const msg = (
     <Title className="myTitle">
       <WarningOutlined /> Coming soon ...
     </Title>
   );
+
+  const reCaptchaHandler = (token: string | null) => {
+    // 點選驗證 & 驗證過期都會進入
+    console.log("Captcha value:", token);
+  };
 
   const graffitiWall = () => {
     return (
@@ -50,7 +58,7 @@ const GraffitiWall: NextPage = () => {
   const msgForm = () => {
     const pasteClick = (values: { userName: string; content: string }) => {
       message.error(
-        <div >
+        <div>
           <Row>目前還在施工中 &gt;&lt;</Row>
           <Row>抱歉了 {values.userName}</Row>
         </div>
@@ -59,7 +67,7 @@ const GraffitiWall: NextPage = () => {
 
     return (
       <Row justify="center">
-        <Col span={18} lg={14}>
+        <Col span={20} lg={16}>
           <Card className="cardStyles">
             <Typography>
               <Title className="title">
@@ -75,16 +83,35 @@ const GraffitiWall: NextPage = () => {
                 <Form.Item
                   label="我想說"
                   name="content"
-                  rules={[{ required: true, message: "想說的話要打上來唷><" }]}
+                  rules={[{ required: true, message: "想說的話要打上來唷 ><" }]}
                 >
-                  <Input.TextArea></Input.TextArea>
+                  <Input.TextArea size="large"></Input.TextArea>
                 </Form.Item>
                 <Form.Item
                   label="綽號"
                   name="userName"
-                  rules={[{ required: true, message: "替塗鴉簽個名吧><" }]}
+                  rules={[{ required: true, message: "替塗鴉簽個名吧 ><" }]}
                 >
                   <Input></Input>
+                </Form.Item>
+                <Form.Item
+                  label="E-mail"
+                  name="email"
+                  rules={[{ type: "email", message: "E-mail 格式怪怪的 OAOa" }]}
+                >
+                  <Input placeholder="xxx@xxx.xxx"></Input>
+                </Form.Item>
+                <Form.Item
+                  label="驗證"
+                  name="reCaptcha"
+                  rules={[{ required: true, message: "請證明您不是機器人 ><" }]}
+                >
+                  <ReCAPTCHA
+                    sitekey={publicRuntimeConfig.reCaptchaSiteKey}
+                    onChange={reCaptchaHandler}
+                    // theme="dark"
+                    badge="inline"
+                  ></ReCAPTCHA>
                 </Form.Item>
                 <Form.Item wrapperCol={{ span: 24 }}>
                   <Button
