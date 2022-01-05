@@ -176,6 +176,7 @@ const About: NextPage = () => {
                     <List.Item>HTML / CSS / JavaScript (TypeScript)</List.Item>
                     <List.Item>jQuery</List.Item>
                     <List.Item>Bootstrap、Ant Design</List.Item>
+                    <List.Item>Next.JS</List.Item>
                   </List>
                 </Card.Grid>
                 <Card.Grid className="ant-col-24 ant-col-lg-8">
