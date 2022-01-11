@@ -6,7 +6,7 @@ import { CaretRightOutlined, CaretLeftOutlined } from '@ant-design/icons'
 
 import getConfig from 'next/config'
 // Only holds serverRuntimeConfig and publicRuntimeConfig
-const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
+export const { serverRuntimeConfig, publicRuntimeConfig } = getConfig()
 // Will only be available on the server-side
 console.log(serverRuntimeConfig)
 // Will be available on both server-side and client-side

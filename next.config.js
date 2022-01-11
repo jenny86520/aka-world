@@ -19,5 +19,6 @@ module.exports = {
   publicRuntimeConfig: {
     helloMsg: "Welcome to " + process.env.WEBSITE_NAME,
     reCaptchaSiteKey: process.env.RECAPTCHA_SITEKEY,
+    serverHost: process.env.SERVER_HOST
   },
 };

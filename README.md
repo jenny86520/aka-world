@@ -1,4 +1,5 @@
-Visit：[https://aka-world.vercel.app/](https://aka-world.vercel.app/)
+Visit: [https://aka-world.vercel.app/](https://aka-world.vercel.app/)
+back-end: [https://github.com/jenny86520/aka-world-backend](https://github.com/jenny86520/aka-world-backend)
 
 ## Getting Started
 

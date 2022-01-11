@@ -17,13 +17,14 @@ import { menu } from "../components/menu/mainMenu";
 import Marquee from "react-fast-marquee";
 import style from "../styles/graffitiWall.module.css";
 import ReCAPTCHA from "react-google-recaptcha";
-import getConfig from "next/config";
+import { useRequest } from "ahooks";
+import { AddMessage } from "./api/graffitiWall.api";
+import { publicRuntimeConfig } from ".";
 
 const { Title } = Typography;
 
 const GraffitiWall: NextPage = () => {
   const mainMenu = menu;
-  const { publicRuntimeConfig } = getConfig();
 
   const msg = (
     <Title className="myTitle">
@@ -55,16 +56,21 @@ const GraffitiWall: NextPage = () => {
     );
   };
 
-  const msgForm = () => {
-    const pasteClick = (values: { userName: string; content: string }) => {
+  const { loading, run: doAddMsg } = useRequest(AddMessage, {
+    manual: true,
+    onSuccess: ({ data }) => {
+      message.info("已貼上!");
+    },
+    onError: (err) => {
+      console.error(err);
       message.error(
         <div>
           <Row>目前還在施工中 &gt;&lt;</Row>
-          <Row>抱歉了 {values.userName}</Row>
         </div>
       );
-    };
-
+    },
+  });
+  const msgForm = () => {
     return (
       <Row justify="center">
         <Col span={20} lg={16}>
@@ -72,13 +78,13 @@ const GraffitiWall: NextPage = () => {
             <Typography>
               <Title className="title">
                 <HighlightOutlined />
-                塗鴉
+                塗鴉{loading}
               </Title>
               <Form
                 name="msgForm"
                 labelCol={{ span: 8 }}
                 wrapperCol={{ span: 10 }}
-                onFinish={pasteClick}
+                onFinish={doAddMsg}
               >
                 <Form.Item
                   label="我想說"
