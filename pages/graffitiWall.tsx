@@ -34,7 +34,7 @@ const GraffitiWall: NextPage = () => {
 
   const reCaptchaHandler = (token: string | null) => {
     // 點選驗證 & 驗證過期都會進入
-    console.log("Captcha value:", token);
+    // console.log("Captcha value:", token);
   };
 
   const graffitiWall = () => {
@@ -59,7 +59,11 @@ const GraffitiWall: NextPage = () => {
   const { loading, run: doAddMsg } = useRequest(AddMessage, {
     manual: true,
     onSuccess: ({ data }) => {
-      message.info("已貼上!");
+      if (data.errorMsg == "captcha") {
+        message.error("不歡迎機器人 030");
+      } else {
+        message.info("已貼上!");
+      }
     },
     onError: (err) => {
       console.error(err);
