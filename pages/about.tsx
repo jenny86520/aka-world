@@ -126,10 +126,7 @@ const About: NextPage = () => {
                     </Tooltip>
                   </List.Item>
                 </a>
-                <a
-                  href="https://www.youtube.com/channel/UC9mNWhvvEgAPA2Je1wi-HYQ"
-                  target="_block"
-                >
+                <a href="https://www.youtube.com/@dragonfly_r" target="_block">
                   <List.Item>
                     <Tooltip
                       title="Youtube 訂閱我的遊戲實況頻道"
@@ -143,9 +140,7 @@ const About: NextPage = () => {
                           />
                         }
                         title={"赤蜻."}
-                        description={
-                          "https://www.youtube.com/embed/UC9mNWhvvEgAPA2Je1wi-HYQ"
-                        }
+                        description={"https://www.youtube.com/@dragonfly_r"}
                       ></List.Item.Meta>
                     </Tooltip>
                   </List.Item>
@@ -184,6 +179,7 @@ const About: NextPage = () => {
                   <List style={{ fontSize: 20 }}>
                     <List.Item>ASP.Net Core</List.Item>
                     <List.Item>ASP.Net Framework</List.Item>
+                    <List.Item>Node.JS、Nest.JS</List.Item>
                     <List.Item>Java</List.Item>
                   </List>
                 </Card.Grid>
@@ -201,7 +197,7 @@ const About: NextPage = () => {
                   <Title level={2}>Database</Title>
                   <List style={{ fontSize: 20 }}>
                     <List.Item>Microsoft SQL Server</List.Item>
-                    <List.Item>Firebase、MongoDB</List.Item>
+                    <List.Item>Firebase、MongoDB(Mongoose)</List.Item>
                     <List.Item>Entity Framework</List.Item>
                     <List.Item>MySQL</List.Item>
                     <List.Item>SQLite</List.Item>
@@ -284,9 +280,55 @@ const About: NextPage = () => {
                       與 PM
                       討論架構、資料表結構及解釋程式碼邏輯，並協助製作測試報告。
                     </List.Item>
-                    <List.Item>目前持續維護現有專案及開發擴充功能。</List.Item>
                     <List.Item>
                       專案編制為四位 RD 與一位 PM，僅 PM 為對客戶之窗口。
+                    </List.Item>
+                  </List>
+                </Panel>
+              </Collapse>
+              <Title level={2}>
+                車牌辨識、去背網站內部系統的前後端（React、Node.JS、AntD）
+              </Title>
+              <Collapse defaultActiveKey={["1", "2"]}>
+                <Panel header="工作資訊" key="1">
+                  <List>
+                    <List.Item>
+                      <Descriptions>
+                        <Descriptions.Item label="公司名稱">
+                          海姆達爾智慧科技股份有限公司
+                        </Descriptions.Item>
+                        <Descriptions.Item label="工作資歷">
+                          2021/12 -（在職中）
+                        </Descriptions.Item>
+                        <Descriptions.Item label="職稱">
+                          全端軟體工程師
+                        </Descriptions.Item>
+                      </Descriptions>
+                    </List.Item>
+                  </List>
+                </Panel>
+                <Panel header="工作內容" key="2">
+                  <List>
+                    <List.Item>
+                      負責車牌辨識及去背後台的資料處理，包含人員、單位、角色、會員管理，以及表單製作、圖片上傳下載、統計圖表、開立罰單、下載
+                      excel 等，亦有處理資料的批次排程。
+                    </List.Item>
+                    <List.Item>
+                      前端使用 React 及 Next.JS 框架，後端使用 Node.JS 及
+                      Nest.JS 框架。
+                    </List.Item>
+                    <List.Item>使用 Ant Design 框架進行頁面編排。</List.Item>
+                    <List.Item>使用 MongoDB(Mongoose) 管理資料庫。</List.Item>
+                    <List.Item>
+                      使用 Git 進行版本控制，使用 VSCode 開發。
+                    </List.Item>
+                    <List.Item>接觸過 Vercel，用以自我提升。</List.Item>
+                    <List.Item>
+                      與 PM 討論架構、資料表結構及解釋程式碼邏輯。
+                    </List.Item>
+                    <List.Item>目前持續維護現有專案及開發擴充功能。</List.Item>
+                    <List.Item>
+                      專案編制為兩位 RD 與一位 PM，僅 PM 為對客戶之窗口。
                     </List.Item>
                   </List>
                 </Panel>
