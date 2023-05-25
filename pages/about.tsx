@@ -287,7 +287,8 @@ const About: NextPage = () => {
                 </Panel>
               </Collapse>
               <Title level={2}>
-                車牌辨識、去背網站內部系統的前後端（React、Node.JS、AntD）
+                車牌辨識、課程、去背網站內部系統的前後端（React、Node.JS、Ant
+                Design）
               </Title>
               <Collapse defaultActiveKey={["1", "2"]}>
                 <Panel header="工作資訊" key="1">
@@ -298,7 +299,7 @@ const About: NextPage = () => {
                           海姆達爾智慧科技股份有限公司
                         </Descriptions.Item>
                         <Descriptions.Item label="工作資歷">
-                          2021/12 -（在職中）
+                          2021/12 - 2023/05（約1年半）
                         </Descriptions.Item>
                         <Descriptions.Item label="職稱">
                           全端軟體工程師
@@ -310,23 +311,29 @@ const About: NextPage = () => {
                 <Panel header="工作內容" key="2">
                   <List>
                     <List.Item>
-                      負責車牌辨識及去背後台的資料處理，包含人員、單位、角色、會員管理，以及表單製作、圖片上傳下載、統計圖表、開立罰單、下載
-                      excel 等，亦有處理資料的批次排程。
+                      負責車牌辨識、課程、去背後台管理系統的資料處理，負責內部系統的前後端，以及外部系統的後端。內部系統為人員、單位、角色、會員管理，及客戶回饋、訂單、罰單、系統參數設定、角色權限管理、人員新刪修、違規罰單檢視、違規開單、訂單管理、統計圖表、憑證設定、通知設定（Web、Email、Telegram、Line）、客製化頁面、表單製作、圖片上傳下載、Excel表單下載及操作歷程等，亦有撰寫大量測資及處理資料的批次排程；外部系統為課程及去背後台管理系統的前端所需API，包含課程資訊、統計資料等。
                     </List.Item>
                     <List.Item>
                       前端使用 React 及 Next.JS 框架，後端使用 Node.JS 及
                       Nest.JS 框架。
                     </List.Item>
                     <List.Item>使用 Ant Design 框架進行頁面編排。</List.Item>
-                    <List.Item>使用 MongoDB(Mongoose) 管理資料庫。</List.Item>
+                    <List.Item>
+                      使用 MongoDB(Mongoose)、Robo 3T 管理資料庫。
+                    </List.Item>
                     <List.Item>
                       使用 Git 進行版本控制，使用 VSCode 開發。
                     </List.Item>
-                    <List.Item>接觸過 Vercel，用以自我提升。</List.Item>
                     <List.Item>
-                      與 PM 討論架構、資料表結構及解釋程式碼邏輯。
+                      接觸過 Vercel 幫助其餘專案及自我提升。
                     </List.Item>
-                    <List.Item>目前持續維護現有專案及開發擴充功能。</List.Item>
+                    <List.Item>
+                      與 PM
+                      討論架構、資料表結構及解釋程式碼邏輯，並協助製作操作報告。
+                    </List.Item>
+                    <List.Item>
+                      負責維護現有專案、開發擴充功能及解決套件版本衝突。
+                    </List.Item>
                     <List.Item>
                       專案編制為兩位 RD 與一位 PM，僅 PM 為對客戶之窗口。
                     </List.Item>
