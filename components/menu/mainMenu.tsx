@@ -7,7 +7,7 @@ export const menu = () => {
   let menuSelectKeys: string[] = [];
 
   return (
-    <Affix style={{ marginBottom: "-3rem", zIndex: 1 }}>
+    <Affix style={{ marginBottom: "-3rem", zIndex: 3 }}>
       <Header className="header">
         <div className="logo" />
         <Menu
