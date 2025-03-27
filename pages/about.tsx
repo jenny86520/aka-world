@@ -170,8 +170,18 @@ const About: NextPage = () => {
                     <List.Item>React</List.Item>
                     <List.Item>HTML / CSS / JavaScript (TypeScript)</List.Item>
                     <List.Item>jQuery</List.Item>
-                    <List.Item>Bootstrap、Ant Design</List.Item>
+                    <List.Item>RxJS</List.Item>
                     <List.Item>Next.JS</List.Item>
+                    <List.Item>Single SPA</List.Item>
+                    <List.Item>Module Federation</List.Item>
+                  </List>
+                </Card.Grid>
+                <Card.Grid className="ant-col-24 ant-col-lg-8">
+                  <Title level={2}>CSS</Title>
+                  <List style={{ fontSize: 20 }}>
+                    <List.Item>Bootstrap</List.Item>
+                    <List.Item>Ant Design</List.Item>
+                    <List.Item>PrimeNG</List.Item>
                   </List>
                 </Card.Grid>
                 <Card.Grid className="ant-col-24 ant-col-lg-8">
@@ -183,6 +193,18 @@ const About: NextPage = () => {
                     <List.Item>Java</List.Item>
                   </List>
                 </Card.Grid>
+              </Row>
+              <Row>
+                <Card.Grid className="ant-col-24 ant-col-lg-8">
+                  <Title level={2}>Database</Title>
+                  <List style={{ fontSize: 20 }}>
+                    <List.Item>Microsoft SQL Server</List.Item>
+                    <List.Item>Firebase、MongoDB (Mongoose)</List.Item>
+                    <List.Item>Entity Framework</List.Item>
+                    <List.Item>MySQL</List.Item>
+                    <List.Item>SQLite</List.Item>
+                  </List>
+                </Card.Grid>
                 <Card.Grid className="ant-col-24 ant-col-lg-8">
                   <Title level={2}>Other Languages</Title>
                   <List style={{ fontSize: 20 }}>
@@ -191,24 +213,13 @@ const About: NextPage = () => {
                     <List.Item>Android Studio (Java)</List.Item>
                   </List>
                 </Card.Grid>
-              </Row>
-              <Row>
-                <Card.Grid className="ant-col-24 ant-col-lg-8">
-                  <Title level={2}>Database</Title>
-                  <List style={{ fontSize: 20 }}>
-                    <List.Item>Microsoft SQL Server</List.Item>
-                    <List.Item>Firebase、MongoDB(Mongoose)</List.Item>
-                    <List.Item>Entity Framework</List.Item>
-                    <List.Item>MySQL</List.Item>
-                    <List.Item>SQLite</List.Item>
-                  </List>
-                </Card.Grid>
                 <Card.Grid className="ant-col-24 ant-col-lg-8">
                   <Title level={2}>Version Control</Title>
                   <List style={{ fontSize: 20 }}>
                     <List.Item>Git</List.Item>
                     <List.Item>Github</List.Item>
                     <List.Item>Gitlab</List.Item>
+                    <List.Item>TFS (Team Foundation Service)</List.Item>
                   </List>
                 </Card.Grid>
               </Row>
@@ -336,6 +347,57 @@ const About: NextPage = () => {
                     </List.Item>
                     <List.Item>
                       專案編制為兩位 RD 與一位 PM，僅 PM 為對客戶之窗口。
+                    </List.Item>
+                  </List>
+                </Panel>
+              </Collapse>
+              <Title level={2}>
+                銀行內部系統的前端（Angular、Single SPA、Module
+                Federation、PrimeNG）
+              </Title>
+              <Collapse defaultActiveKey={["1", "2"]}>
+                <Panel header="工作資訊" key="1">
+                  <List>
+                    <List.Item>
+                      <Descriptions>
+                        <Descriptions.Item label="公司名稱">
+                          國泰世華商業銀行股份有限公司
+                        </Descriptions.Item>
+                        <Descriptions.Item label="工作資歷">
+                          2023/08 - 現職中
+                        </Descriptions.Item>
+                        <Descriptions.Item label="職稱">
+                          高級專員
+                        </Descriptions.Item>
+                      </Descriptions>
+                    </List.Item>
+                  </List>
+                </Panel>
+                <Panel header="工作內容" key="2">
+                  <List>
+                    <List.Item>
+                      接銀行前台與後台需求之內部系統（為中間資料處理的站台，簡稱中台），負責信用卡權益管理、批次管理、規則引擎、中台內部整合管理系統的前端。內部系統為行員針對不同系統的設定與管理，包含表單填寫、跨欄位或跨頁面的檢核、審核、放行、退回、批次歷程等。
+                    </List.Item>
+                    <List.Item>
+                      使用 Angular 及微前端框架 Single SPA 與 Module
+                      Federation。
+                    </List.Item>
+                    <List.Item>使用 PrimeNG 框架進行頁面編排。</List.Item>
+                    <List.Item>
+                      使用 Git、Gitlab、TFS（Team Foundation
+                      Service）進行版本控制，使用 VSCode 開發。
+                    </List.Item>
+                    <List.Item>
+                      接觸過單元測試（Unit Test）Jest、Jasmine
+                      及整合測試（End-to-end
+                      Test）Playwright，幫助其餘專案及自我提升。
+                    </List.Item>
+                    <List.Item>
+                      與 PM、SA、Back-end、QA
+                      討論架構及解釋程式碼邏輯，並協助製作測試報告。
+                    </List.Item>
+                    <List.Item>
+                      負責行內委外廠商管理，包含進駐、退場、防火牆開通、遠端資安檢測等。
                     </List.Item>
                   </List>
                 </Panel>
