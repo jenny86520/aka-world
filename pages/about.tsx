@@ -364,7 +364,7 @@ const About: NextPage = () => {
                           國泰世華商業銀行股份有限公司
                         </Descriptions.Item>
                         <Descriptions.Item label="工作資歷">
-                          2023/08 - 現職中
+                          2023/08 - 2026/03（約2年半）
                         </Descriptions.Item>
                         <Descriptions.Item label="職稱">
                           高級專員
